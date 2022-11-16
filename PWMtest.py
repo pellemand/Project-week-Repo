@@ -95,17 +95,20 @@ def TurnRight():
 while True:
 
     inputFromUser = input()
-    match inputFromUser:
-        case "w":
-            Forward(inputFromUser)
-        case "s":
-            Backward(inputFromUser)
-        case "a":
-            TurnLeft(inputFromUser)
-        case "d":
-            TurnRight(inputFromUser)
-        case _:
-            print("idfk")
+    for i in range(100):
+        match inputFromUser:
+            case "w":
+                Forward(inputFromUser)
+            case "s":
+                Backward(inputFromUser)
+            case "a":
+                TurnLeft(inputFromUser)
+            case "d":
+                TurnRight(inputFromUser)
+            case _:
+                print("idfk")
+
+    
 
          
 
