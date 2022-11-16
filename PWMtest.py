@@ -96,17 +96,31 @@ while True:
 
     inputFromUser = input()
     for i in range(100):
-        match inputFromUser:
-            case "w":
-                Forward(inputFromUser)
-            case "s":
-                Backward(inputFromUser)
-            case "a":
-                TurnLeft(inputFromUser)
-            case "d":
-                TurnRight(inputFromUser)
-            case _:
-                print("idfk")
+        if inputFromUser == "w":
+            Forward(inputFromUser)
+        elif inputFromUser == "s":
+            Backward(inputFromUser)
+        elif inputFromUser == "a":
+            TurnLeft(inputFromUser)
+        elif inputFromUser == "d":
+            TurnRight(inputFromUser)
+        
+        
+        
+        
+        
+        
+        # match inputFromUser:
+        #     case "w":
+        #         Forward(inputFromUser)
+        #     case "s":
+        #         Backward(inputFromUser)
+        #     case "a":
+        #         TurnLeft(inputFromUser)
+        #     case "d":
+        #         TurnRight(inputFromUser)
+        #     case _:
+        #         print("idfk")
 
     
 
