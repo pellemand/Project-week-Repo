@@ -96,15 +96,17 @@ while True:
 
     inputFromUser = str(input())
 
-    def switch(inputFromUser):
-        if inputFromUser == "w":
+    match inputFromUser:
+        case "w":
             Forward(inputFromUser)
-        elif inputFromUser == "s":
+        case "s":
             Backward(inputFromUser)
-        elif inputFromUser == "a":
+        case "a":
             TurnLeft(inputFromUser)
-        elif inputFromUser == "d":
+        case "d":
             TurnRight(inputFromUser)
+        case _:
+            print("idfk")
 
          
 
