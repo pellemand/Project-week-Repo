@@ -9,7 +9,7 @@ SpeedPin3 = 29
 # PWM pins
 
 dcForward = 100
-dcBackward = 
+dcBackward = 100
 dcDriveRightWheels = 50
 dcDriveLeftWheels = 50
 dcStop = 0
