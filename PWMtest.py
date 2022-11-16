@@ -94,8 +94,9 @@ def TurnRight():
 # start PWM of required Duty Cycle 
 while True:
 
-    inputFromUser = input()
+    
     for i in range(100):
+        inputFromUser = input()
         if inputFromUser == "w":
             Forward(inputFromUser)
         elif inputFromUser == "s":
