@@ -94,15 +94,15 @@ def TurnRight():
 # start PWM of required Duty Cycle 
 while True:
 
-    # def switch(inputFromUser):
-    if inputFromUser == "w":
-        Forward(inputFromUser)
-    elif inputFromUser == "s":
-        Backward(inputFromUser)
-    elif inputFromUser == "a":
-        TurnLeft(inputFromUser)
-    elif inputFromUser == "d":
-        TurnRight(inputFromUser)
+    def switch(inputFromUser):
+        if inputFromUser == "w":
+            Forward(inputFromUser)
+        elif inputFromUser == "s":
+            Backward(inputFromUser)
+        elif inputFromUser == "a":
+            TurnLeft(inputFromUser)
+        elif inputFromUser == "d":
+            TurnRight(inputFromUser)
 
          
 
