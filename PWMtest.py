@@ -1,5 +1,4 @@
 #PWM test
-
 import RPi.GPIO as GPIO
 from time import sleep
 
@@ -8,6 +7,8 @@ SpeedPin1 = 15
 SpeedPin2 = 22
 SpeedPin3 = 29
 # PWM pins
+
+dc = 100
 
 DirectionPin = 11
 DirectionPin1 = 16
@@ -48,18 +49,22 @@ GPIO.output(DirectionPin2, True)
 GPIO.output(DirectionPin3, True)
 
 
-#start PWM of required Duty Cycle 
+# start PWM of required Duty Cycle 
 while True:
-    for duty in range(0,101,1):
-        pi_pwm.ChangeDutyCycle(duty) #provide duty cycle in the range 0-100
-        pi_pwm1.ChangeDutyCycle(duty)
-        pi_pwm2.ChangeDutyCycle(duty)
-        pi_pwm3.ChangeDutyCycle(duty)
-        sleep(0.1)
+    # for duty in range(0,101,1):
+    #     pi_pwm.ChangeDutyCycle(duty) #provide duty cycle in the range 0-100
+    #     pi_pwm1.ChangeDutyCycle(duty)
+    #     pi_pwm2.ChangeDutyCycle(duty)
+    #     pi_pwm3.ChangeDutyCycle(duty)
+    #     sleep(0.1)
                 
-    for duty in range(100,0,-1):
-        pi_pwm.ChangeDutyCycle(duty)
-        pi_pwm1.ChangeDutyCycle(duty)
-        pi_pwm2.ChangeDutyCycle(duty)
-        pi_pwm3.ChangeDutyCycle(duty)
-        sleep(0.1)
+    # for duty in range(100,0,-1):
+    #     pi_pwm.ChangeDutyCycle(duty)
+    #     pi_pwm1.ChangeDutyCycle(duty)
+    #     pi_pwm2.ChangeDutyCycle(duty)
+    #     pi_pwm3.ChangeDutyCycle(duty)
+    #     sleep(0.1)
+    pi_pwm.ChangeDutyCycle(dc)
+    pi_pwm1.ChangeDutyCycle(dc)
+    pi_pwm2.ChangeDutyCycle(dc)
+    pi_pwm3.ChangeDutyCycle(dc)
