@@ -9,7 +9,7 @@ SpeedPin3 = 29
 # PWM pins
 
 dcForward = 100
-dcBackward = -100
+dcBackward = 
 dcDriveRightWheels = 50
 dcDriveLeftWheels = 50
 dcStop = 0
@@ -48,11 +48,12 @@ pi_pwm2.start(0)
 pi_pwm3 = GPIO.PWM(SpeedPin3,1000)		#create PWM instance with frequency
 pi_pwm3.start(0)
 
+"""
 GPIO.output(DirectionPin, True)
 GPIO.output(DirectionPin1, True)
 GPIO.output(DirectionPin2, True)
 GPIO.output(DirectionPin3, True)
-
+"""
 
 
 def Forward(inputFromUser):
@@ -63,6 +64,10 @@ def Forward(inputFromUser):
         pi_pwm1.ChangeDutyCycle(dcForward)
         pi_pwm2.ChangeDutyCycle(dcForward)
         pi_pwm3.ChangeDutyCycle(dcForward)
+        GPIO.output(DirectionPin, True)
+        GPIO.output(DirectionPin1, True)
+        GPIO.output(DirectionPin2, True)
+        GPIO.output(DirectionPin3, True)
         
 def Backward(inputFromUser):
     inputFromUser = str(input())
@@ -72,6 +77,10 @@ def Backward(inputFromUser):
         pi_pwm1.ChangeDutyCycle(dcBackward)
         pi_pwm2.ChangeDutyCycle(dcBackward)
         pi_pwm3.ChangeDutyCycle(dcBackward)
+        GPIO.output(DirectionPin, False)
+        GPIO.output(DirectionPin1, False)
+        GPIO.output(DirectionPin2, False)
+        GPIO.output(DirectionPin3, False)
 
 def TurnLeft(inputFromUser):
     inputFromUser = str(input())
@@ -81,6 +90,10 @@ def TurnLeft(inputFromUser):
         pi_pwm1.ChangeDutyCycle(dcDriveLeftWheels)
         pi_pwm2.ChangeDutyCycle(dcDriveRightWheels)
         pi_pwm3.ChangeDutyCycle(dcDriveRightWheels)
+        GPIO.output(DirectionPin, False)
+        GPIO.output(DirectionPin1, False)
+        GPIO.output(DirectionPin2, True)
+        GPIO.output(DirectionPin3, True)
 
 def TurnRight():
     inputFromUser = str(input())
@@ -90,6 +103,10 @@ def TurnRight():
         pi_pwm1.ChangeDutyCycle(dcDriveRightWheels)
         pi_pwm2.ChangeDutyCycle(dcDriveLeftWheels)
         pi_pwm3.ChangeDutyCycle(dcDriveLeftWheels)
+        GPIO.output(DirectionPin, True)
+        GPIO.output(DirectionPin1, True)
+        GPIO.output(DirectionPin2, False)
+        GPIO.output(DirectionPin3, False)
 
 # start PWM of required Duty Cycle 
 while True:
@@ -105,7 +122,10 @@ while True:
             TurnLeft(inputFromUser)
         elif inputFromUser == "d":
             TurnRight(inputFromUser)
-        
+        else:
+            pass
+
+        i += 1
         
         
         
