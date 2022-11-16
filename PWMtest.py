@@ -53,7 +53,7 @@ GPIO.output(DirectionPin1, True)
 GPIO.output(DirectionPin2, True)
 GPIO.output(DirectionPin3, True)
 
-inputFromUser = str(input())
+
 
 def Forward(inputFromUser):
     inputFromUser = str(input())
@@ -93,6 +93,8 @@ def TurnRight():
 
 # start PWM of required Duty Cycle 
 while True:
+
+    inputFromUser = str(input())
 
     def switch(inputFromUser):
         if inputFromUser == "w":
