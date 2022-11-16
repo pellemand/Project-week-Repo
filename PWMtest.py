@@ -108,6 +108,16 @@ def TurnRight(inputFromUser):
         GPIO.output(DirectionPin2, True)
         GPIO.output(DirectionPin3, True)
 
+def Stop(inputFromUser):
+    inputFromUser = str(input())
+
+    if inputFromUser == "q":
+        pi_pwm.ChangeDutyCycle(dcStop)
+        pi_pwm1.ChangeDutyCycle(dcStop)
+        pi_pwm2.ChangeDutyCycle(dcStop)
+        pi_pwm3.ChangeDutyCycle(dcStop)
+       
+
 # start PWM of required Duty Cycle 
 while True:
 
@@ -122,10 +132,11 @@ while True:
             TurnLeft(inputFromUser)
         elif inputFromUser == "d":
             TurnRight(inputFromUser)
+        elif inputFromUser == "q":
+            Stop(inputFromUser)
         else:
             pass
-
-        i += 1
+        
         
         
         
