@@ -57,8 +57,7 @@ GPIO.output(DirectionPin3, True)
 
 
 def Forward(inputFromUser):
-    inputFromUser = str(input())
-
+    
     if inputFromUser == "w":
         pi_pwm.ChangeDutyCycle(dcForward)
         pi_pwm1.ChangeDutyCycle(dcForward)
@@ -70,8 +69,6 @@ def Forward(inputFromUser):
         GPIO.output(DirectionPin3, True)
         
 def Backward(inputFromUser):
-    inputFromUser = str(input())
-
     if inputFromUser == "s":
         pi_pwm.ChangeDutyCycle(dcBackward)
         pi_pwm1.ChangeDutyCycle(dcBackward)
@@ -83,8 +80,7 @@ def Backward(inputFromUser):
         GPIO.output(DirectionPin3, False)
 
 def TurnLeft(inputFromUser):
-    inputFromUser = str(input())
-
+    
     if inputFromUser == "a":
         pi_pwm.ChangeDutyCycle(dcDriveLeftWheels)
         pi_pwm1.ChangeDutyCycle(dcDriveLeftWheels)
@@ -96,7 +92,7 @@ def TurnLeft(inputFromUser):
         GPIO.output(DirectionPin3, False)
 
 def TurnRight(inputFromUser):
-    inputFromUser = str(input())
+    
 
     if inputFromUser == "d":
         pi_pwm.ChangeDutyCycle(dcDriveRightWheels)
@@ -109,7 +105,7 @@ def TurnRight(inputFromUser):
         GPIO.output(DirectionPin3, True)
 
 def Stop(inputFromUser):
-    inputFromUser = str(input())
+    
 
     if inputFromUser == "q":
         pi_pwm.ChangeDutyCycle(dcStop)
@@ -136,7 +132,7 @@ while True:
             Stop(inputFromUser)
         else:
             pass
-        
+
         
         
         
