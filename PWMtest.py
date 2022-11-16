@@ -12,6 +12,7 @@ dcForward = 100
 dcBackward = -100
 dcDriveRightWheels = 50
 dcDriveLeftWheels = 50
+dcStop = 0
 
 
 DirectionPin = 11
@@ -63,7 +64,32 @@ def Forward(inputFromUser):
         pi_pwm2.ChangeDutyCycle(dcForward)
         pi_pwm3.ChangeDutyCycle(dcForward)
         
+def Backward(inputFromUser):
+    inputFromUser = str(input())
 
+    if inputFromUser == "s":
+        pi_pwm.ChangeDutyCycle(dcBackward)
+        pi_pwm1.ChangeDutyCycle(dcBackward)
+        pi_pwm2.ChangeDutyCycle(dcBackward)
+        pi_pwm3.ChangeDutyCycle(dcBackward)
+
+def TurnLeft(inputFromUser):
+    inputFromUser = str(input())
+
+    if inputFromUser == "a":
+        pi_pwm.ChangeDutyCycle(dcDriveLeftWheels)
+        pi_pwm1.ChangeDutyCycle(dcDriveLeftWheels)
+        pi_pwm2.ChangeDutyCycle(dcDriveRightWheels)
+        pi_pwm3.ChangeDutyCycle(dcDriveRightWheels)
+
+def TurnRight():
+    inputFromUser = str(input())
+
+    if inputFromUser == "d":
+        pi_pwm.ChangeDutyCycle(dcDriveRightWheels)
+        pi_pwm1.ChangeDutyCycle(dcDriveRightWheels)
+        pi_pwm2.ChangeDutyCycle(dcDriveLeftWheels)
+        pi_pwm3.ChangeDutyCycle(dcDriveLeftWheels)
 
 # start PWM of required Duty Cycle 
 while True:
@@ -71,6 +97,13 @@ while True:
     # def switch(inputFromUser):
     if inputFromUser == "w":
         Forward(inputFromUser)
+    elif inputFromUser == "s":
+        Backward(inputFromUser)
+    elif inputFromUser == "a":
+        TurnLeft(inputFromUser)
+    elif inputFromUser == "d":
+        TurnRight(inputFromUser)
+
          
 
 
