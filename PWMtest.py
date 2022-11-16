@@ -68,9 +68,10 @@ def Forward(inputFromUser):
 # start PWM of required Duty Cycle 
 while True:
 
-    def switch(inputFromUser):
-        if inputFromUser == "w":
-            Forward(inputFromUser)
+    # def switch(inputFromUser):
+    if inputFromUser == "w":
+        Forward(inputFromUser)
+         
 
 
     # for duty in range(0,101,1):
